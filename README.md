@@ -379,6 +379,9 @@ sudo nmcli connection modify eth0 ipv4.dns 127.0.0.1
 sudo nmcli connection modify eth0 ipv4.dns-search ocp.pxe.com
 sudo nmcli connection modify eth0 ipv4.ignore-auto-dns yes
 sudo systemctl restart NetworkManager
+systemctl start named
+systemctl enable named
+systemctl status named
 ```
 * Preparing ntp server 
 ```
