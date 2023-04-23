@@ -65,7 +65,7 @@ network:
             gateway4: 192.168.24.1
             nameservers:
                addresses: [1.1.1.1, 8.8.8.8]
-        br-Tenant:
+        br-tenant:
             interfaces: [eno2]
             addresses: [192.168.5.10/24]
     version: 2
@@ -103,7 +103,7 @@ sudo virt-install -n master01.ocp.pxe.com \
  --boot hd,menu=on \
  --events on_reboot=destroy \
  --network bridge=br-ctrplane,mac=52:54:00:8b:a1:17 \
- --network bridge=br-Tenant,mac=52:54:00:8b:a1:18
+ --network bridge=br-tenant,mac=52:54:00:8b:a1:18
 
 
 sudo virt-install -n master02.ocp.pxe.com  \
@@ -118,7 +118,7 @@ sudo virt-install -n master02.ocp.pxe.com  \
  --boot hd,menu=on \
  --events on_reboot=destroy \
  --network bridge=br-ctrplane,mac=52:54:00:ea:8b:9d \
- --network bridge=br-Tenant,mac=52:54:00:ea:8b:9c
+ --network bridge=br-tenant,mac=52:54:00:ea:8b:9c
 
 sudo virt-install -n master03.ocp.pxe.com  \
 --description "Master03 Machine for Openshift 4 Cluster" \
@@ -132,7 +132,7 @@ sudo virt-install -n master03.ocp.pxe.com  \
 --boot hd,menu=on \
 --events on_reboot=destroy \
 --network bridge=br-ctrplane,mac=52:54:00:f8:87:c7 \
---network bridge=br-Tenant,mac=52:54:00:f8:87:c8
+--network bridge=br-tenant,mac=52:54:00:f8:87:c8
 
 sudo virt-install -n worker01.ocp.pxe.com \
  --description "worker01 Machine for Openshift 4 Cluster" \
@@ -146,7 +146,7 @@ sudo virt-install -n worker01.ocp.pxe.com \
  --boot hd,menu=on \
  --events on_reboot=destroy \
  --network bridge=br-ctrplane,mac=52:54:00:31:4a:38 \
- --network bridge=br-Tenant,mac=52:54:00:31:4a:39
+ --network bridge=br-tenant,mac=52:54:00:31:4a:39
 
  sudo virt-install -n worker02.ocp.pxe.com \
  --description "worker02 Machine for Openshift 4 Cluster" \
@@ -160,7 +160,7 @@ sudo virt-install -n worker01.ocp.pxe.com \
  --boot hd,menu=on \
  --events on_reboot=destroy \
  --network bridge=br-ctrplane,mac=52:54:00:6a:37:32 \
- --network bridge=br-Tenant,mac=52:54:00:6a:37:33 
+ --network bridge=br-tenant,mac=52:54:00:6a:37:33 
 ```
 #### Configure Sushi-Emulartor on KVM Host
 * I followed the [link](https://cloudcult.dev/sushy-emulator-redfish-for-the-virtualization-nation/)  and [link](https://cloudcult.dev/fishing-for-sushy-with-curl/) to setup Suhi and use it alongwith Redfish API to manage VMs.
