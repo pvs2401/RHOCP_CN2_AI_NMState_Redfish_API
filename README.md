@@ -84,6 +84,10 @@ sudo mkdir -p /var/lib/libvirt/sushy-host
 sudo virsh pool-define-as default --type dir --target /var/lib/libvirt/sushy-host
 sudo virsh pool-autostart default
 sudo virsh pool-start default
+mkdir -p /var/lib/libvirt/sushy-host/images
+sudo virsh pool-define-as images --type dir --target /var/lib/libvirt/sushy-host/images/
+sudo virsh pool-start images
+sudo virsh pool-autostart images
 ```
 #### VM Defination 
 ```
